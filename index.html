@@ -1,10 +1,885 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Alexei Ciobanu</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alexei Ciobanu — Product Leader</title>
+  <meta name="description" content="Product leader steering an established product through the AI-native transition. Director of Product Management at PandaDoc; ex-DocuSign, Usermind, 2× founder." />
+  <meta property="og:title" content="Alexei Ciobanu — Product Leader" />
+  <meta property="og:description" content="Product leader steering an established product through the AI-native transition. Director of Product Management at PandaDoc; ex-DocuSign, Usermind, 2× founder." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://alexeiciobanu.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alexei Ciobanu — Product Leader" />
+  <meta name="twitter:description" content="Product leader steering an established product through the AI-native transition." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23152238'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='30' fill='%23ffffff'%3EAC%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Tokens ── */
+    :root {
+      --bg:        #ffffff;
+      --fg:        #1c2630;
+      --navy:      #152238;
+      --navy-60:   rgba(21,34,56,0.7);
+      --navy-40:   rgba(21,34,56,0.64);
+      --navy-15:   rgba(21,34,56,0.15);
+      --muted:     #647285;
+      --rule:      rgba(21,34,56,0.1);
+      --serif:     'Cormorant Garamond', Georgia, serif;
+      --sans:      'DM Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ── Page load animations removed for reliability ── */
+
+    /* ── Sticky nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
+      padding: 16px 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+    }
+
+    nav.visible { opacity: 1; pointer-events: auto; }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-name {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links { display: flex; gap: 36px; }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy-40);
+      padding-bottom: 1px;
+      border-bottom: 1px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .nav-links a:hover {
+      color: var(--navy);
+      border-bottom-color: var(--navy);
+    }
+
+    /* ── Hero ── */
+    header {
+      padding: 108px 0 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--navy-40);
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(68px, 10vw, 112px);
+      font-weight: 300;
+      line-height: 0.92;
+      letter-spacing: -0.015em;
+      color: var(--navy);
+      margin-bottom: 40px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--navy-60);
+    }
+
+    .tagline {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--navy-60);
+      max-width: 520px;
+      line-height: 1.72;
+      text-wrap: pretty;
+    }
+
+    /* ── Sections ── */
+    section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--navy-40);
+      margin-bottom: 44px;
+    }
+
+    /* ── About ── */
+    .about-text {
+      font-family: var(--serif);
+      font-size: clamp(21px, 2.5vw, 27px);
+      font-weight: 300;
+      line-height: 1.52;
+      color: var(--navy);
+      max-width: 760px;
+      text-wrap: pretty;
+    }
+
+    .about-text strong {
+      font-weight: 500;
+    }
+
+    /* ── Experience ── */
+    .exp-list { display: grid; gap: 0; }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 196px 1fr;
+      gap: 0 48px;
+      padding: 26px 0;
+      border-top: 1px solid var(--rule);
+      align-items: start;
+    }
+
+    .exp-item:last-child { border-bottom: 1px solid var(--rule); }
+
+    .exp-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-top: 4px;
+    }
+
+    .exp-company {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    .exp-company a {
+      color: var(--navy);
+      transition: opacity 0.15s;
+    }
+
+    .exp-company a:hover { opacity: 0.5; }
+
+    .exp-date {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    .exp-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .exp-role {
+      font-family: var(--serif);
+      font-size: 21px;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .exp-impact {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.65;
+      text-wrap: pretty;
+    }
+
+    /* ── Notable ── */
+    .notable-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .notable-item {
+      padding: 24px 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .notable-item:nth-child(odd) {
+      padding-right: 32px;
+    }
+
+    .notable-item:nth-child(even) {
+      padding-left: 32px;
+      border-left: 1px solid var(--rule);
+    }
+
+    .notable-num {
+      font-family: var(--serif);
+      font-size: clamp(36px, 4vw, 46px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .notable-desc {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.55;
+      text-wrap: pretty;
+    }
+
+    /* ── Expertise ── */
+    .expertise-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+    }
+
+    .expertise-item {
+      padding-right: 40px;
+    }
+
+    .expertise-item + .expertise-item {
+      padding-left: 40px;
+      padding-right: 40px;
+      border-left: 1px solid var(--rule);
+    }
+
+    .expertise-item:last-child {
+      padding-right: 0;
+    }
+
+    .expertise-title {
+      font-family: var(--serif);
+      font-size: 23px;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--navy);
+      display: block;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .expertise-desc {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.72;
+      text-wrap: pretty;
+    }
+
+    /* ── Speaking list ── */
+    .speaking-list { display: grid; gap: 0; }
+
+    .notes-list { display: grid; gap: 0; }
+
+    .note-item {
+      padding: 22px 0;
+      border-top: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 0 32px;
+    }
+
+    .note-item:last-child { border-bottom: 1px solid var(--rule); }
+
+    .note-date {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--muted);
+      padding-top: 3px;
+      white-space: nowrap;
+    }
+
+    .note-text {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.5;
+      max-width: 480px;
+      text-wrap: pretty;
+    }
+
+    .notes-view-all {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      border-bottom: 1px solid var(--navy-40);
+      padding-bottom: 2px;
+    }
+
+    .notes-view-all:hover { border-color: var(--navy); color: var(--navy); }
+
+    .note-read-more {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--navy-40);
+    }
+
+    .note-read-more:hover { color: var(--navy); }
+
+    .note-topic {
+      display: block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy-40);
+      margin-bottom: 8px;
+    }
+
+    .speaking-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0 12px;
+      padding: 10px 0;
+      border-top: 1px solid var(--rule);
+      align-items: start;
+    }
+
+    .speaking-item:last-child { border-bottom: 1px solid var(--rule); }
+
+    .speaking-title {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+
+    .speaking-venue {
+      font-size: 10px;
+      font-weight: 300;
+      color: var(--muted);
+      margin-top: 2px;
+      letter-spacing: 0.01em;
+    }
+
+    .speaking-meta {
+      font-size: 10px;
+      font-weight: 300;
+      color: var(--muted);
+      white-space: nowrap;
+      padding-top: 3px;
+    }
+
+    /* ── Background ── */
+    .background-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 80px;
+    }
+
+    .bg-col-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--navy-40);
+      margin-bottom: 24px;
+    }
+
+    .edu-institution {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 16px;
+      letter-spacing: 0.01em;
+    }
+
+    .edu-degrees {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .edu-degrees li {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .edu-badge {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--navy);
+      min-width: 36px;
+    }
+
+    .edu-field-year {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .recognition-list {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+    }
+
+    .recognition-list li {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.5;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .recognition-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 4px;
+      height: 1px;
+      background: var(--navy-40);
+    }
+
+    .recognition-list strong {
+      display: block;
+      font-weight: 500;
+      color: var(--navy);
+      font-size: 13px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 88px 0 108px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .contact-headline {
+      font-family: var(--serif);
+      font-size: clamp(40px, 5.5vw, 62px);
+      font-weight: 300;
+      line-height: 1.08;
+      margin-bottom: 40px;
+      color: var(--navy);
+    }
+
+    .contact-headline em {
+      font-style: italic;
+      color: var(--navy-60);
+    }
+
+    .cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      border-bottom: 1px solid var(--navy-40);
+      padding-bottom: 3px;
+      transition: letter-spacing 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .cta-link:hover {
+      letter-spacing: 0.18em;
+      border-color: var(--navy);
+      color: var(--navy);
+    }
+
+    .cta-link svg {
+      width: 13px;
+      height: 13px;
+      transition: transform 0.2s;
+    }
+
+    .cta-link:hover svg {
+      transform: translate(3px, -3px);
+    }
+
+    /* ── Hero layout ── */
+    .hero-inner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0 56px;
+      align-items: center;
+      padding-bottom: 88px;
+    }
+
+    .hero-text { display: flex; flex-direction: column; padding-bottom: 0; }
+
+    .hero-photo-wrap {
+    }
+
+    .hero-photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+      filter: grayscale(10%) contrast(1.04);
+      box-shadow: 0 0 0 1px rgba(21,34,56,0.1);
+    }
+
+    @media (max-width: 680px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 28px 0; padding-bottom: 56px; }
+      .hero-photo { width: 120px; height: 120px; }
+    }
+    @media (max-width: 600px) {
+      header { padding: 64px 0 56px; }
+      .wrap { padding: 0 24px; }
+
+      .exp-item { grid-template-columns: 1fr; gap: 0; }
+      .exp-meta {
+        flex-direction: row;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .notable-grid { grid-template-columns: 1fr; }
+      .notable-item:nth-child(even) { border-left: none; padding-left: 0; }
+      #notable > div { grid-template-columns: 1fr; gap: 48px; }
+
+      .expertise-list { grid-template-columns: 1fr; }
+      .expertise-item,
+      .expertise-item + .expertise-item {
+        padding-left: 0;
+        padding-right: 0;
+        border-left: none;
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: 32px;
+        margin-bottom: 32px;
+      }
+      .expertise-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+      .background-grid { grid-template-columns: 1fr; gap: 48px; }
+
+      .note-item { grid-template-columns: 1fr; gap: 4px; }
+
+      .nav-links { display: none; }
+    }
+  </style>
 </head>
 <body>
-  <!-- placeholder — design coming -->
+
+  <nav id="main-nav">
+    <div class="wrap nav-inner">
+      <span class="nav-name">Alexei Ciobanu</span>
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#notable">Notable</a>
+        <a href="#expertise">Expertise</a>
+        <a href="notes.html">Notes</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrap">
+
+    <!-- Hero -->
+    <header id="top">
+      <div class="hero-inner">
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" src="AlexeiCiobanu.jpg" alt="Alexei Ciobanu" />
+        </div>
+        <div class="hero-text">
+          <p class="eyebrow">Product &nbsp;·&nbsp; Platform &nbsp;·&nbsp; AI</p>
+          <h1>Alexei<br><em>Ciobanu</em></h1>
+          <p class="tagline">I'm drawn to the problems where the hard part isn't the idea — it's making something genuinely complex feel like it was always obvious.</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+      <h2 class="section-label">About</h2>
+      <p class="about-text">
+        I believe most product failures are <strong>alignment failures</strong>, not execution ones. For nearly two decades I've led product — as a founder, at scale with DocuSign, and now guiding PandaDoc's product and team through the AI-native transition.
+      </p>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <h2 class="section-label">Experience</h2>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="exp-company"><a href="https://pandadoc.com" target="_blank">PandaDoc</a></span>
+            <span class="exp-date">Jan 2024 — present</span>
+          </div>
+          <div class="exp-detail">
+            <span class="exp-role">Director of Product Management</span>
+            <span class="exp-impact">Leading PandaDoc's agreement experience, platform services, and design foundations. Steering the product's AI-native transition — AI-assisted document preparation, field detection, and content generation — while developing a senior product team.</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="exp-company"><a href="https://docusign.com" target="_blank">DocuSign</a></span>
+            <span class="exp-date">2021 — 2023</span>
+          </div>
+          <div class="exp-detail">
+            <span class="exp-role">Lead, Product Management</span>
+            <span class="exp-impact">Led eSignature API growth and identity and workflow platform services; cut operational overhead by 80% for enterprise customers.</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="exp-company"><a href="http://usermind.com" target="_blank">Usermind <span style="font-weight:300;color:var(--muted);font-size:11px">(acq. Qualtrics)</span></a></span>
+            <span class="exp-date">2017 — 2021</span>
+          </div>
+          <div class="exp-detail">
+            <span class="exp-role">Director of Product Management</span>
+            <span class="exp-impact">Led product for the journey-orchestration platform — enterprise software unifying customer data and automating journeys across channels — through its recognition as a Forrester Wave Market Leader (Q2 2020). Earlier, led the platform redesign that lifted customer satisfaction 20% and adoption 25%.</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="exp-company">Earlier</span>
+            <span class="exp-date">2008 — 2017</span>
+          </div>
+          <div class="exp-detail">
+            <span class="exp-role">Founder, Director &amp; Product Lead</span>
+            <span class="exp-impact">Co-founded Retently (SaaS feedback platform); scaled Linkquidator to 1,000+ paying clients in year one; launched Moldova's first startup incubator, mentoring 400+ entrepreneurs.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Notable + Speaking -->
+    <section id="notable">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 80px;align-items:start;">
+
+        <div>
+          <h2 class="section-label">Notable</h2>
+          <div class="notable-grid">
+            <div class="notable-item">
+              <div class="notable-num">2×</div>
+              <div class="notable-desc">Co-founded B2B SaaS products from zero to paying customers</div>
+            </div>
+            <div class="notable-item">
+              <div class="notable-num">5×</div>
+              <div class="notable-desc">International Startup Weekend winner</div>
+            </div>
+            <div class="notable-item">
+              <div class="notable-num">2020</div>
+              <div class="notable-desc">Forrester Wave — Market Leader in Journey Orchestration</div>
+            </div>
+            <div class="notable-item">
+              <div class="notable-num">400+</div>
+              <div class="notable-desc">Entrepreneurs mentored through Moldova’s first startup incubator</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="speaking">
+          <h2 class="section-label">Speaking</h2>
+          <div class="speaking-list">
+            <div class="speaking-item"><div><div class="speaking-title">Platform Product Management</div><div class="speaking-venue">Prow Conference</div></div><div class="speaking-meta">2024</div></div>
+            <div class="speaking-item"><div><div class="speaking-title">Product Strategy Essentials</div><div class="speaking-venue">Prow Conference · Workshop</div></div><div class="speaking-meta">2024</div></div>
+            <div class="speaking-item"><div><div class="speaking-title">From SaaS to Deeptech</div><div class="speaking-venue">DeepTech GigaHack</div></div><div class="speaking-meta">2024</div></div>
+            <div class="speaking-item"><div><div class="speaking-title">Healthcare Digitalization Panel</div><div class="speaking-venue">Digital Health Forum Moldova</div></div><div class="speaking-meta">2024</div></div>
+            <div class="speaking-item"><div><div class="speaking-title">The Black Box of Product Management</div><div class="speaking-venue">Startup Grind Chișinău</div></div><div class="speaking-meta">2024</div></div>
+            <div class="speaking-item"><div><div class="speaking-title">Strategy to Roadmap</div><div class="speaking-venue">PM Bootcamp</div></div><div class="speaking-meta">2024</div></div>
+            <div class="speaking-item"><div><div class="speaking-title">Building Products for the Enterprise</div><div class="speaking-venue">ProductCon Moldova</div></div><div class="speaking-meta">2023</div></div>
+            <div class="speaking-item"><div><div class="speaking-title">Self-Manage the Health of Your API Integrations</div><div class="speaking-venue">DocuSign Momentum</div></div><div class="speaking-meta">2022</div></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expertise">
+      <h2 class="section-label">Expertise</h2>
+      <div class="expertise-list">
+        <div class="expertise-item">
+          <span class="expertise-title">AI-Native Product Development</span>
+          <p class="expertise-desc">Rethinking what the product should be when AI is the architecture — not shipping AI features onto existing workflows. Knowing where AI creates durable advantage and where it just resets the clock.</p>
+        </div>
+        <div class="expertise-item">
+          <span class="expertise-title">Platform as Leverage</span>
+          <p class="expertise-desc">Building the primitives other teams build on — identity, billing, data, orchestration. Infrastructure that compounds: every team above it ships faster.</p>
+        </div>
+        <div class="expertise-item">
+          <span class="expertise-title">Product Leadership in Transition</span>
+          <p class="expertise-desc">Growing product teams as the discipline itself is being rewritten. Less about process frameworks, more about judgment — what's worth building, how teams stay close to the user, and what great product work looks like when AI changes what products can be.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Field Notes -->
+    <section id="field-notes">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:44px;"><h2 class="section-label" style="margin-bottom:0;">Field Notes</h2><span id="notes-updated" style="font-size:11px;color:var(--navy-40);letter-spacing:0.04em;"></span></div>
+      <div id="notes-preview" class="notes-list"></div>
+      <a class="notes-view-all" href="notes.html">All field notes →</a>
+    </section>
+
+    <!-- Background -->
+    <section id="background">
+      <h2 class="section-label">Background</h2>
+      <div class="background-grid">
+        <div>
+          <h3 class="bg-col-label">Education</h3>
+          <p class="edu-institution">Academy of Economic Studies of Moldova</p>
+          <ul class="edu-degrees">
+            <li>
+              <span class="edu-badge">MSc</span>
+              <span class="edu-field-year">IT Management &mdash; 2012</span>
+            </li>
+            <li>
+              <span class="edu-badge">BA</span>
+              <span class="edu-field-year">Business Administration &mdash; 2011</span>
+            </li>
+            <li>
+              <span class="edu-badge">BSc</span>
+              <span class="edu-field-year">Computer Science &mdash; 2010</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="bg-col-label">Recognition</h3>
+          <ul class="recognition-list">
+            <li>
+              <strong>Forrester Wave</strong>
+              Market Leader, Journey Orchestration
+            </li>
+            <li>
+              <strong>5× International Startup Weekend</strong>
+              Winner
+            </li>
+            <li>
+              <strong>Moldova's first startup incubator</strong>
+              Founder &amp; Managing Director
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <footer id="contact">
+      <h2 class="contact-headline">Let's talk about<br><em>the hard problem.</em></h2>
+      <div class="footer-links">
+        <a class="cta-link" href="mailto:alexei.ciobanu@gmail.com">
+          alexei.ciobanu@gmail.com
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M1 13L13 1M13 1H4M13 1V10"/>
+          </svg>
+        </a>
+        <a class="cta-link" href="https://linkedin.com/in/alexeiciobanu" target="_blank">
+          linkedin.com/in/alexeiciobanu
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M1 13L13 1M13 1H4M13 1V10"/>
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="notes-data.js"></script>
+  <script>
+    const nav = document.getElementById('main-nav');
+    const header = document.querySelector('header');
+    const io = new IntersectionObserver(([e]) => {
+      nav.classList.toggle('visible', !e.isIntersecting);
+    }, { threshold: 0 });
+    io.observe(header);
+
+    const preview = document.getElementById('notes-preview');
+    const fmt = d => new Date(d + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    preview.innerHTML = FIELD_NOTES.slice(0, 3).map(n => `
+      <div class="note-item">
+        <div class="note-date">${fmt(n.date)}</div>
+        <div>
+          <span class="note-topic">${n.topic}</span>
+          <p class="note-text">“${n.excerpt}”</p>
+          <a class="note-read-more" href="notes/${n.id}.html">Read note →</a>
+        </div>
+      </div>
+    `).join('');
+    document.getElementById('notes-updated').textContent = 'Updated ' + fmt(FIELD_NOTES[0].date);
+  </script>
 </body>
 </html>
