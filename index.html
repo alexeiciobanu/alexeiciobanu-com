@@ -27,6 +27,8 @@
       --navy-40:   rgba(21,34,56,0.64);
       --navy-15:   rgba(21,34,56,0.15);
       --muted:     #647285;
+      --accent:    oklch(42% 0.09 245);
+      --accent-bg: oklch(93% 0.03 240);
       --rule:      rgba(21,34,56,0.1);
       --serif:     'Cormorant Garamond', Georgia, serif;
       --sans:      'DM Sans', system-ui, sans-serif;
@@ -97,8 +99,8 @@
     }
 
     .nav-links a:hover {
-      color: var(--navy);
-      border-bottom-color: var(--navy);
+      color: var(--accent);
+      border-bottom-color: var(--accent);
     }
 
     /* ── Hero ── */
@@ -379,15 +381,15 @@
       color: var(--navy-40);
     }
 
-    .note-read-more:hover { color: var(--navy); }
+    .note-read-more:hover { color: var(--accent); }
 
     .note-topic {
       display: block;
+      color: var(--accent);
       font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--navy-40);
       margin-bottom: 8px;
     }
 
@@ -556,8 +558,8 @@
 
     .cta-link:hover {
       letter-spacing: 0.18em;
-      border-color: var(--navy);
-      color: var(--navy);
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
     .cta-link svg {
@@ -755,7 +757,7 @@
         <div id="speaking">
           <h2 class="section-label">Speaking</h2>
           <div class="speaking-list">
-            <div class="speaking-item"><div><div class="speaking-title">Building for Global Audiences at Scale</div><div class="speaking-venue"><a href="https://world.productledalliance.com/location/berlin/agenda" target="_blank" rel="noopener">Product-Led Alliance World — Berlin</a></div></div><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:oklch(42% 0.09 245);background:oklch(93% 0.03 240);border-radius:3px;padding:3px 7px;">Upcoming</span><div class="speaking-meta">2026</div></div></div>
+            <div class="speaking-item"><div><div class="speaking-title">Building for Global Audiences at Scale</div><div class="speaking-venue"><a href="https://world.productledalliance.com/location/berlin/agenda" target="_blank" rel="noopener">Product-Led Alliance World — Berlin</a></div></div><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-bg);border-radius:3px;padding:3px 7px;">Upcoming</span><div class="speaking-meta">2026</div></div></div>
             <div class="speaking-item"><div><div class="speaking-title">Platform Product Management</div><div class="speaking-venue">Prow Conference</div></div><div class="speaking-meta">2024</div></div>
             <div class="speaking-item"><div><div class="speaking-title">The Black Box of Product Management</div><div class="speaking-venue">Startup Grind Chișinău</div></div><div class="speaking-meta">2024</div></div>
             <div class="speaking-item"><div><div class="speaking-title">Building Products for the Enterprise</div><div class="speaking-venue">ProductCon Moldova</div></div><div class="speaking-meta">2024</div></div>
@@ -777,18 +779,18 @@
         </div>
         <div class="expertise-item">
           <span class="expertise-title">Platform as Leverage</span>
-          <p class="expertise-desc">Building the primitives other teams build on — identity, billing, data, orchestration. Infrastructure that compounds: every team above it ships faster.</p>
+          <p class="expertise-desc">Knowing when shared foundations are the unlock and when they're premature. Built too early, platform work is overhead; built at the right moment, every team above it ships faster.</p>
         </div>
         <div class="expertise-item">
           <span class="expertise-title">Product Leadership in Transition</span>
-          <p class="expertise-desc">Growing product teams as the discipline itself is being rewritten. Less about process frameworks, more about judgment — what's worth building, how teams stay close to the user, and what great product work looks like when AI changes what products can be.</p>
+          <p class="expertise-desc">Growing product teams as the discipline itself is being rewritten. Less about process frameworks, more about judgment — what's worth building, and what great product work looks like when AI changes what products can be.</p>
         </div>
       </div>
     </section>
 
     <!-- Field Notes -->
     <section id="field-notes">
-      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:44px;"><h2 class="section-label" style="margin-bottom:0;">Field Notes</h2><span id="notes-updated" style="font-size:11px;color:var(--navy-40);letter-spacing:0.04em;"></span></div>
+      <h2 class="section-label">Field Notes</h2>
       <div id="notes-preview" class="notes-list"></div>
       <a class="notes-view-all" href="notes.html">All field notes →</a>
     </section>
@@ -877,7 +879,6 @@
         </div>
       </div>
     `).join('');
-    document.getElementById('notes-updated').textContent = 'Updated ' + fmt(FIELD_NOTES[0].date);
   </script>
 </body>
 </html>
