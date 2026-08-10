@@ -301,22 +301,19 @@
     /* ── Notable ── */
     .notable-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 0;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0 40px;
     }
 
     .notable-item {
-      padding: 20px 0;
+      padding: 22px 0 0;
       border-top: 1px solid var(--rule);
-      display: grid;
-      grid-template-columns: 88px 1fr;
-      gap: 0 20px;
-      align-items: baseline;
     }
 
     .notable-num {
       font-family: var(--serif);
       font-size: clamp(32px, 3.2vw, 40px);
+      margin-bottom: 10px;
       font-weight: 300;
       font-style: italic;
       color: var(--navy);
@@ -377,7 +374,9 @@
       text-wrap: pretty;
     }
 
-    .notable-speaking { display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; align-items: start; }
+    .notable-speaking { display: grid; gap: 64px; }
+
+    .speaking-role { white-space: nowrap; }
 
     /* ── Speaking list ── */
     .speaking-list { display: grid; gap: 0; }
@@ -388,7 +387,7 @@
       padding: 22px 0;
       border-top: 1px solid var(--rule);
       display: grid;
-      grid-template-columns: 110px 1fr;
+      grid-template-columns: 132px 1fr;
       gap: 0 32px;
     }
 
@@ -586,9 +585,11 @@
       .expertise-item + .expertise-item { border-top: 1px solid var(--rule); padding-top: 32px; margin-top: 32px; }
       .expertise-desc { max-width: 540px; font-size: 15px; }
 
+      .notable-grid { grid-template-columns: 1fr; }
+      .notable-item { padding: 20px 0 0; }
       .notable-desc { max-width: 500px; }
 
-      .notable-speaking { grid-template-columns: 1fr; gap: 56px; }
+      .notable-speaking { gap: 56px; }
     }
     @media (max-width: 680px) {
       .hero-inner { grid-template-columns: 1fr; gap: 26px 0; padding-bottom: 56px; }
@@ -608,8 +609,7 @@
         margin-bottom: 8px;
       }
 
-      .notable-speaking { grid-template-columns: 1fr; gap: 48px; }
-      .notable-item { grid-template-columns: 1fr; gap: 8px 0; }
+      .notable-speaking { gap: 48px; }
 
 
       .note-item { grid-template-columns: 1fr; gap: 4px; }
@@ -644,7 +644,7 @@
           <img class="hero-photo" src="AlexeiCiobanu.jpg" alt="Portrait of Alexei Ciobanu" width="440" height="440" fetchpriority="high" decoding="async" />
         </div>
         <div class="hero-text">
-          <p class="eyebrow">Product &nbsp;·&nbsp; SaaS &nbsp;·&nbsp; AI &nbsp;·&nbsp; Leadership</p>
+          <p class="eyebrow">Product &nbsp;·&nbsp; AI &nbsp;·&nbsp; Leadership</p>
           <h1>Alexei<br><em>Ciobanu</em></h1>
           <p class="tagline">Product leader guiding teams through the AI-native transition. I'm drawn to the problems where the hard part isn't the idea — it's making something genuinely complex feel like it was always obvious.</p>
         </div>
@@ -657,7 +657,7 @@
     <section id="about">
       <h2 class="section-label">About</h2>
       <p class="about-text">
-        I believe most product failures are <strong>alignment failures</strong>, not execution ones. For nearly two decades I've led product — as a founder, at scale with DocuSign, and now at PandaDoc, where AI is rewriting what the product should be.
+        I believe most product failures are <strong>alignment failures</strong>, not execution ones. For nearly two decades I've led product — as a founder, at enterprise scale with Usermind and DocuSign, and now at PandaDoc, where AI is rewriting what the product should be.
       </p>
     </section>
 
@@ -714,7 +714,7 @@
           </div>
           <div class="exp-detail">
             <h3 class="exp-role">Director of Product Management</h3>
-            <span class="exp-impact">Led product for the journey-orchestration platform — enterprise software unifying customer data and automating journeys across channels. Earlier, led the platform redesign that lifted customer satisfaction 20% and adoption 25%.</span>
+            <span class="exp-impact">Led product for the journey-orchestration platform — enterprise software unifying customer data and automating journeys across channels — recognized by Forrester as a Wave Market Leader (2020). Earlier, led the platform redesign that lifted customer satisfaction 20% and adoption 25%.</span>
           </div>
         </div>
 
@@ -725,7 +725,7 @@
           </div>
           <div class="exp-detail">
             <h3 class="exp-role">Founder, Director &amp; Product Lead</h3>
-            <span class="exp-impact">Co-founded Retently (SaaS feedback platform); scaled Linkquidator to 1,000+ paying clients in year one.</span>
+            <span class="exp-impact">Co-founded Retently (SaaS feedback platform) and Knowlla; scaled Linkquidator to 1,000+ paying clients in year one.</span>
           </div>
         </div>
 
@@ -751,21 +751,17 @@
               <div class="notable-num">1st</div>
               <div class="notable-desc">Launched Moldova's first startup incubator as Managing Director — 400+ entrepreneurs mentored</div>
             </div>
-            <div class="notable-item">
-              <div class="notable-num">2020</div>
-              <div class="notable-desc">Forrester Wave — Market Leader in Journey Orchestration (Usermind)</div>
-            </div>
           </div>
         </div>
 
         <div id="speaking">
           <h2 class="section-label">Speaking</h2>
           <div class="speaking-list">
-            <div class="speaking-item"><div><div class="speaking-title">Building for Global Audiences at Scale</div><div class="speaking-venue"><a href="https://world.productledalliance.com/location/berlin/agenda" target="_blank" rel="noopener noreferrer">Product-Led Alliance World — Berlin</a></div></div><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-bg);border-radius:3px;padding:3px 7px;">Upcoming</span><div class="speaking-meta">2026</div></div></div>
+            <div class="speaking-item"><div><div class="speaking-title">Building for Global Audiences at Scale</div><div class="speaking-venue"><a href="https://world.productledalliance.com/location/berlin/agenda" target="_blank" rel="noopener noreferrer">Product-Led Alliance World — Berlin</a> <span class="speaking-role">&middot; Panel moderator</span></div></div><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-bg);border-radius:3px;padding:3px 7px;">Upcoming</span><div class="speaking-meta">2026</div></div></div>
             <div class="speaking-item"><div><div class="speaking-title">Platform Product Management</div><div class="speaking-venue">Prow Conference</div></div><div class="speaking-meta">2024</div></div>
             <div class="speaking-item"><div><div class="speaking-title">The Black Box of Product Management</div><div class="speaking-venue">Startup Grind Chișinău</div></div><div class="speaking-meta">2024</div></div>
             <div class="speaking-item"><div><div class="speaking-title">Building Products for the Enterprise</div><div class="speaking-venue">ProductCon Moldova</div></div><div class="speaking-meta">2024</div></div>
-            <div class="speaking-item"><div><div class="speaking-title">From SaaS to Deeptech</div><div class="speaking-venue">DeepTech GigaHack</div></div><div class="speaking-meta">2024</div></div>
+            <div class="speaking-item"><div><div class="speaking-title">From SaaS to DeepTech</div><div class="speaking-venue">DeepTech GigaHack</div></div><div class="speaking-meta">2024</div></div>
             <div class="speaking-item"><div><div class="speaking-title">Self-Manage the Health of Your API Integrations</div><div class="speaking-venue">DocuSign Momentum</div></div><div class="speaking-meta">2022</div></div>
           </div>
         </div>
@@ -776,7 +772,32 @@
     <!-- Field Notes -->
     <section id="field-notes">
       <h2 class="section-label">Field Notes</h2>
-      <div id="notes-preview" class="notes-list"></div>
+      <div id="notes-preview" class="notes-list">
+        <div class="note-item">
+          <div class="note-date">August 1, 2026</div>
+          <div>
+            <span class="note-topic">Roadmapping</span>
+            <p class="note-text">&ldquo;Roadmaps are commitment devices, not prediction tools.&rdquo;</p>
+            <a class="note-read-more" href="notes/roadmaps-commitment-devices.html">Read note &rarr;</a>
+          </div>
+        </div>
+        <div class="note-item">
+          <div class="note-date">July 18, 2026</div>
+          <div>
+            <span class="note-topic">AI Product</span>
+            <p class="note-text">&ldquo;‘AI-native’ has become a synonym for ‘we added a chat box.’&rdquo;</p>
+            <a class="note-read-more" href="notes/ai-native-chat-box.html">Read note &rarr;</a>
+          </div>
+        </div>
+        <div class="note-item">
+          <div class="note-date">July 2, 2026</div>
+          <div>
+            <span class="note-topic">Platform Strategy</span>
+            <p class="note-text">&ldquo;Platform-vs-product conflict is usually just two reward functions colliding.&rdquo;</p>
+            <a class="note-read-more" href="notes/platform-vs-product-reward.html">Read note &rarr;</a>
+          </div>
+        </div>
+      </div>
       <a class="notes-view-all" href="notes.html">All field notes →</a>
     </section>
 
@@ -803,7 +824,6 @@
 
   </div>
 
-  <script src="notes-data.js"></script>
   <script>
     const nav = document.getElementById('main-nav');
     const header = document.querySelector('header');
@@ -812,18 +832,6 @@
     }, { threshold: 0 });
     io.observe(header);
 
-    const preview = document.getElementById('notes-preview');
-    const fmt = d => new Date(d + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-    preview.innerHTML = FIELD_NOTES.slice(0, 3).map(n => `
-      <div class="note-item">
-        <div class="note-date">${fmt(n.date)}</div>
-        <div>
-          <span class="note-topic">${n.topic}</span>
-          <p class="note-text">“${n.excerpt}”</p>
-          <a class="note-read-more" href="notes/${n.id}.html">Read note →</a>
-        </div>
-      </div>
-    `).join('');
   </script>
 </body>
 </html>

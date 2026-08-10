@@ -58,19 +58,32 @@ h1{font-family:var(--serif);font-size:clamp(44px,7vw,64px);font-weight:300;line-
 <h1>Short takes on<br><em style="font-style:italic;color:var(--navy-60)">product management.</em></h1>
 <p class="intro">Unfiltered opinions on product strategy, platform work, and the state of the craft — written as they occur to me, not polished into essays.</p>
 </header>
-<div id="notes-full" class="notes-list"></div>
+<div id="notes-full" class="notes-list">
+<div class="note-item">
+<a href="notes/roadmaps-commitment-devices.html">
+<div class="note-date"><span class="note-topic">Roadmapping</span>August 1, 2026</div>
+<span class="note-title">Roadmaps are commitment devices, not prediction tools.</span>
+</a>
 </div>
-<script src="notes-data.js"></script>
-<script>
-const fmt = d => new Date(d + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-document.getElementById('notes-full').innerHTML = FIELD_NOTES.map(n => `
-  <div class="note-item">
-    <a href="notes/${n.id}.html">
-      <div class="note-date"><span class="note-topic">${n.topic}</span>${fmt(n.date)}</div>
-      <span class="note-title">${n.excerpt}</span>
-    </a>
-  </div>
-`).join('');
-</script>
+<div class="note-item">
+<a href="notes/ai-native-chat-box.html">
+<div class="note-date"><span class="note-topic">AI Product</span>July 18, 2026</div>
+<span class="note-title">AI-native has become a synonym for we added a chat box.</span>
+</a>
+</div>
+<div class="note-item">
+<a href="notes/platform-vs-product-reward.html">
+<div class="note-date"><span class="note-topic">Platform Strategy</span>July 2, 2026</div>
+<span class="note-title">Platform-vs-product conflict is usually just two reward functions colliding.</span>
+</a>
+</div>
+<div class="note-item">
+<a href="notes/better-slack-worse-prds.html">
+<div class="note-date"><span class="note-topic">Team Leadership</span>June 20, 2026</div>
+<span class="note-title">The best PMs write worse PRDs and better Slack messages.</span>
+</a>
+</div>
+</div>
+</div>
 </body>
 </html>
