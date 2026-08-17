@@ -14,6 +14,17 @@ const FIELD_NOTES = [
     ]
   },
   {
+    id: 'acceptance-rate-is-ux',
+    date: '2026-08-11',
+    topic: 'AI Product',
+    excerpt: "The acceptance rate of an AI suggestion is a UX metric before it's a model metric.",
+    body: [
+      "The acceptance rate of an AI suggestion is a UX metric before it's a model metric. Users reject correct suggestions offered at the wrong moment far more often than they accept wrong ones offered well. Most AI features fail at completeness, not accuracy — surface everything the model found and you've handed someone a cleanup task instead of an answer.",
+      "That distinction decides where the money goes. A single acceptance number routes the work to the model by default, because model quality is the half that's legible and fundable, and you can spend a year improving something that was never the constraint.",
+      "I now make teams say which of the two they're solving before the work gets scoped. Not because the instrumentation is difficult, but because the metric quietly makes a staffing decision that nobody remembers making."
+    ]
+  },
+  {
     id: 'roadmaps-commitment-devices',
     date: '2026-08-01',
     topic: 'Roadmapping',
@@ -25,6 +36,17 @@ const FIELD_NOTES = [
     ]
   },
   {
+    id: 'agents-are-users',
+    date: '2026-07-25',
+    topic: 'AI Product',
+    excerpt: "Agents are becoming users, and they're a segment you can't interview.",
+    body: [
+      "Agents are becoming users, and they're a segment you can't interview. Software operates products on a person's behalf now, and the research methods most of us built our careers on don't reach it.",
+      "The technical consequences are manageable. The organizational one is harder: when the main consumer of your surface is another piece of software, the contract matters more than the interface. Teams hired to ship experiences end up owning things they can no longer safely change.",
+      "That's a structural shift, not a roadmap item. It shows up in what you hire for and in which arguments get harder, long before it shows up in anything a customer can see."
+    ]
+  },
+  {
     id: 'ai-native-chat-box',
     date: '2026-07-18',
     topic: 'AI Product',
@@ -33,6 +55,17 @@ const FIELD_NOTES = [
       "\u201cAI-native\u201d has become a synonym for \u201cwe added a chat box.\u201d The real shift is when the model changes what the product is for, not just how you talk to it.",
       "A chat interface bolted onto an existing workflow is a UI decision. A product that only makes sense because inference is now cheap and fast is an architecture decision. Most teams are making the first one and calling it the second.",
       "The tell is whether removing the AI would leave the product roughly intact. If it would, it wasn't native to begin with."
+    ]
+  },
+  {
+    id: 'judgment-moved-upstream',
+    date: '2026-07-10',
+    topic: 'Product Craft',
+    excerpt: "AI didn't remove writing from product management. It moved the judgment upstream.",
+    body: [
+      "AI didn't remove writing from product management. It moved the judgment upstream — from producing the document to deciding what's worth asking for.",
+      "Most of what gets called AI skill is mechanical and improving on its own. Judgment isn't. It comes from owning a decision that mattered and living with the result, which is expensive and doesn't scale the way a tool does.",
+      "So the question isn't how fluent my team is. It's whether I'm still handing out decisions big enough to learn from, or quietly keeping them because the quarter is tight. Fluency is free now. It was never the scarce part."
     ]
   },
   {
