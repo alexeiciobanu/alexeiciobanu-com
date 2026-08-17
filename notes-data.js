@@ -3,6 +3,17 @@
 // body: array of paragraph strings (2-3 short paragraphs).
 const FIELD_NOTES = [
   {
+    id: 'okr-one-altitude',
+    date: '2026-08-18',
+    topic: 'Planning',
+    excerpt: "An OKR should live at exactly one altitude.",
+    body: [
+      "I've run the post-mortem on a missed quarter more than once, and the easy read is always execution. The honest read is usually structural: targets set before the work was measurable, dependencies across teams distorting the scoring, nothing in place to catch drift while there was still time to respond. The teams weren't slow. The system was blind.",
+      "It usually comes back to altitude. An OKR should live at exactly one altitude — leadership carries the outcome, the team carries the leading indicator meant to move it. When a single key result tries to do both jobs, it does neither: too abstract to act on this week, too operational to matter a level up.",
+      "The cost of getting this wrong isn't a bad scorecard. It's a room of people who've quietly stopped believing the review means anything — which takes far longer to repair than a missed number."
+    ]
+  },
+  {
     id: 'roadmaps-commitment-devices',
     date: '2026-08-01',
     topic: 'Roadmapping',
