@@ -22,10 +22,10 @@ The homepage preview (top 3) and the full list on `notes.html` are hand-authored
 
 ## Design tokens
 ```
---bg: #ffffff        --serif: 'Cormorant Garamond', Georgia, serif  (display)
+--bg: #fcfbf7        --serif: 'Cormorant Garamond', Georgia, serif  (display)
 --fg: #1c2630         --sans: 'DM Sans', system-ui, sans-serif        (body/UI)
 --navy: #152238
---muted: #647285
+--muted: #4e5b6e (homepage), #647285 (notes pages)
 ```
 No component library, no CSS framework — plain CSS in a `<style>` block per file.
 
